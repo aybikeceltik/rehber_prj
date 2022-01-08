@@ -7,17 +7,19 @@ import java.sql.SQLException;
 
 public class KullaniciDAOTest {
     public static void main(String[] args) {
+
         try {
             KullaniciDTO kullanici = new KullaniciDTO();
-            kullanici.setKullaniciAdi("admin");
-            kullanici.setSifre("admin1234");
+            kullanici.setKullaniciAdi("user");
+            kullanici.setSifre("user1234");
+            //kullanici.setAktif(1);
 
             boolean sonuc = KullaniciDAO.giriseYetkilimi(kullanici);
 
-            if (sonuc)
+            if(sonuc)
                 System.out.println("Girişe yetkilidir.");
             else
-                System.out.println("Girişe yetkili degildir");
+                System.out.println("Girişe yetkili değildir!");
 
         } catch (SQLException e) {
             e.printStackTrace();
